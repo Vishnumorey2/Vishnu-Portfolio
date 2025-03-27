@@ -1,7 +1,13 @@
 import { useEffect } from "react";
 
-export const LoadingScreen = () => {
-   
+export const LoadingScreen = ({ onComplete }) => {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            onComplete(); // Call onComplete after 2 seconds
+        }, 2000);
+
+        return () => clearTimeout(timer); // Cleanup function
+    }, [onComplete]);
 
     return (
         <div className="fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center">
@@ -15,3 +21,4 @@ export const LoadingScreen = () => {
         </div>
     );
 };
+
