@@ -1,5 +1,4 @@
 import './App.css'
-import { LoadingScreen } from './components/LoadingScreen'
 import "./index.css"
 import { useState } from 'react'
 import {Navbar} from './components/Navbar'
@@ -12,7 +11,7 @@ import {Contact} from "./components/sections/Contact"
 
 
 function App() {
-  const [isloaded, setIsLoaded] = useState(false);
+
   const [menuOpen, setMenuOpen] = useState(false);
  
   return (
